@@ -1,0 +1,23 @@
+{
+  "name": "phot-album",
+  "authors": [
+    "Juan Arbelaez <djxan2014@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3",
+    "jquery": "~2.1.4",
+    "underscore": "~1.8.3"
+  }
+}
