@@ -135,7 +135,7 @@ button {
   transition: 2.5s ease; }
 
 button:hover {
-  background-color: red; }
+  background-color: yellow; }
 
 .butt1 {
   margin-top: 15%; }

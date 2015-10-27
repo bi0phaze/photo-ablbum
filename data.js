@@ -1,45 +1,43 @@
 var albums = {
   frs: [
-   "pics/img_001.jpg"
-
+   "pics/car1.jpg",
+   "pics/car2.jpg",
+   "pics/car3.jpg",
      ],
   oorah: [
-     "pics/img_002.jpg"
+    "pics/milt-1.jpg",
+    "pics/milt-2.jpg",
+    "pics/milt-3.jpg",
    ],
-  family: [
-     "pics/img_003.jpg"
+  dogs: [
+    "pics/dog-1.jpg",
+    "pics/dog-2.jpg",
+    "pics/dog-3.jpg",
   ],
    white: [
-      "pics/img_004.jpg"
+     "pics/gf-1.jpg",
+     "pics/gf-2.jpg",
+     "pics/gf-3.jpg",
         ],
   fridays: [
-      "pics/img_005.jpg"
+    "pics/rndm-1.jpg",
+    "pics/rndm-2.jpg",
+    "pics/rndm-3.jpg",
       ],
   marvel: [
-      "pics/img_006.jpg"
-    ],
-                white: [
-                   "pics/car1.jpg"
-                     ],
-               fridays: [
-                   "pics/car2.jpg"
-                   ],
-               marvel: [
-                   "pics/cars3.jpg"
-                   ]
+    "pics/baby-1.jpg",
+    "pics/baby-2.jpg",
+    "pics/baby-3.jpg",
+    ]
 
  };
-
-
  ///// /// / / / // /km functions // // /////////// /////////// /////
-
-
 function changeNavStyling() {
   $('.nav').css('width','18%');
   $('.body-box').css('width','80%');
   $('.nav').css('display','inline-block');
   $('.body-box').css('margin-top', '-37%');
-  $('.nav').css('height', '656px');
+  $('.nav').css('height', '856px');
   $('.nav').css('background-color', '#2A2A2A')
   $('.nav').css('transition', 'all 1.5s ease-in-out')
   $('ul').css('display', 'inline-block')
@@ -53,11 +51,18 @@ function changeNavStyling() {
   $('.photos').css('height', '700px');
   $('.photos').css('margin-top', '50%');
   $('footer').css('display', 'none')
-
-
-
 }
 
+function kmhide() {
+$('.km3').css('display', 'none');
+$('.km5').css('display', 'none');
+$('.km').css('display', 'none');
+$('.km7').css('display', 'none');
+$('.km4').css('display', 'none');
+$('.km2').css('display', 'none');
+$('.km6').css('display', 'none');
+  changeNavStyling();
+}
 
 function alb1() {
   $('.km3').css('display', 'none');
@@ -66,22 +71,9 @@ function alb1() {
   $('.km7').css('display', 'none');
   $('.km4').css('display', 'none');
   $('.km2').css('display', 'none');
+  $('two').css('display', 'none');
   $('.one').css('display', 'inline-block');
-
-
-
-
-
   changeNavStyling();
-
-  //var otherAlbums = [
-  // { photo: "pics/car1.jpg"},{ photo: 'pics/car2.jpg' },
-   //{ photo: "pics/car3.jpg"}
- //]
-// var photos = otherAlbums.forEach(function(el) {
-  // $('.photos').append("<img src='" + el.photo + "'>")
-//});
-
 }
 
 
@@ -94,9 +86,6 @@ $('.km7').css('display', 'inline-block');
 $('.km4').css('display', 'inline-block');
 $('.km2').css('display', 'inline-block');
 $('.km3').css('display', 'inline-block');
-
-
-
 $('.nav').css('width','100%');
 $('.body-box').css('width','100%');
 $('.nav').css('display','block');
@@ -113,270 +102,85 @@ $('button').css('display', 'none')
 }
 
 
+//////////  button clicks //////////
 
 
+$('button').on('click', function()
+  { console.log($(this).attr('rel'));
 
-//  var km = "." + $(this).attr('rel');
-  //  console.log(km);
-    //$(km).addClass('active-section');
-    //$(km).siblings('div').removeClass('active-section');
-
-
-
-
-            // // // // // album1 // // // // // // / // / // / / /
-
-              $('.km').on('click', function (event) {
-                event.preventDefault();
-
-    //globalObject = $(this)
-
-  $('.km3').css('display', 'none');
-  $('.km5').css('display', 'none');
-  $('.km6').css('display', 'none');
-  $('.km7').css('display', 'none');
-  $('.km4').css('display', 'none');
-  $('.km2').css('display', 'none');
-  $('.km').css('display', 'none');
-
-
-  changeNavStyling();
-
-  var otherAlbums = [
-   { photo: "pics/car1.jpg"},{ photo: 'pics/car2.jpg' },
-   { photo: "pics/car3.jpg"}
- ]
- var photos = otherAlbums.forEach(function(el) {
-  $('.one').append("<img src='" + el.photo + "'>")
-
-
-
-   $('.butt1').on('click', function (event) {
-     event.preventDefault();
-     home();
-$('.photos').addClass("hidden");
-$('.photos').css('display', 'none');
+  var foto = $(this).attr('rel');
+  var rightAlbum = albums[foto];
+  var stringOfPhotos = ""
+  rightAlbum.forEach(function(el) {
+      stringOfPhotos += "<container><img src='" + el + "'></container>"
+  })
+  $('.photos').html(stringOfPhotos);
 });
-      $('.butt2').on('click', function (event) {
-      event.preventDefault();
+  ///////    // // // // // album1 // // // // // // / // / // / / /
 
-
-      });
-
+  $('.km').on('click', function (event) {
+    event.preventDefault();
+    kmhide();
+    var albums = [
+     { photo: "pics/car1.jpg"},{ photo: 'pics/car2.jpg' },
+     { photo: "pics/car3.jpg"}   ]
+    var photos = albums.forEach(function(el) {
+      $('.photos').append("<img src='" + el.photo + "'>")
+  });
  });
- });
-
-
-
-
-
-
-
-
- /// / / / //// / // / // // / ALBUM2 // / // / // // /// // /// // /// //
+/// / / / //// / // / // // / ALBUM2 // / // / // // /// // /// // /// //
 
   $('.km3').on('click', function (event) {
     event.preventDefault();
-
-  $('.km').css('display', 'none');
-  $('.km5').css('display', 'none');
-  $('.km6').css('display', 'none');
-  $('.km7').css('display', 'none');
-  $('.km4').css('display', 'none');
-  $('.km2').css('display', 'none');
-  $('.km3').css('display', 'none');
-  changeNavStyling();
-
-
-  var otherAlbums = [
+    kmhide();
+  var albums = [
    { photo: "pics/milt-1.jpg"},{ photo: 'pics/milt-2.jpg' },
-   { photo: "pics/milt-3.jpg"}
-  ]
-
-  var photos = otherAlbums.forEach(function(el) {
-   $('.two').append("<img src='" + el.photo + "'>")
-
-
-   $('.butt1').on('click', function (event) {
-     event.preventDefault();
-     home();
-$('.photos').addClass("hidden");
-$('.photos').css('display', 'none');
+   { photo: "pics/milt-3.jpg"}  ]
+  var photos = albums.forEach(function(el) {
+   $('.photos').append("<img src='" + el.photo + "'>")
 });
-
-$('.butt2').on('click', function (event) {
-  event.preventDefault();
-
-  alb1();
-
 });
-
-  });
-
-  });
-
   // /// // /// //// /// // / ALBUM3 // // /// // /// // /// // // // // // //
-
-
   $('.km4').on('click', function (event) {
     event.preventDefault();
-
-  $('.km3').css('display', 'none');
-  $('.km5').css('display', 'none');
-  $('.km6').css('display', 'none');
-  $('.km7').css('display', 'none');
-  $('.km').css('display', 'none');
-  $('.km2').css('display', 'none');
-  $('.km4').css('display', 'none');
-  changeNavStyling();
-  // $('.km4').siblings().css(disp)
-
-
-
-  var otherAlbums = [
+    kmhide();
+  var albums = [
    { photo: "pics/dog-1.jpg"},{ photo: 'pics/dog-2.jpg' },
-   { photo: "pics/dog-3.jpg"}
-  ]
-
-  var photos = otherAlbums.forEach(function(el) {
-   $('.three').append("<img src='" + el.photo + "'>")
-
-   $('.butt1').on('click', function (event) {
-     event.preventDefault();
-     home();
-$('.photos').addClass("hidden");
-$('.photos').css('display', 'none');
-});
-
-  });
-
-  });
-
-
-
-
-
-
-
+   { photo: "pics/dog-3.jpg"}  ]
+  var photos = albums.forEach(function(el) {
+   $('.photos').append("<img src='" + el.photo + "'>")
+    });
+    });
   /// // / //// /// /// // // //ALBUM4 // //// // /// // // /// ///
-
   $('.km5').on('click', function (event) {
     event.preventDefault();
-
-  $('.km3').css('display', 'none');
-  $('.km').css('display', 'none');
-  $('.km6').css('display', 'none');
-  $('.km7').css('display', 'none');
-  $('.km4').css('display', 'none');
-  $('.km2').css('display', 'none');
-  $('.km5').css('display', 'none');
-  changeNavStyling();
-
-
-  var otherAlbums = [
+    kmhide();
+  var albums = [
    { photo: "pics/gf-1.jpg"},{ photo: 'pics/gf-2.jpg' },
-   { photo: "pics/gf-3.jpg"}
- ]
-
- var photos = otherAlbums.forEach(function(el) {
-   $('.four').append("<img src='" + el.photo + "'>")
-
-   $('.butt1').on('click', function (event) {
-     event.preventDefault();
-     home();
-$('.photos').addClass("hidden");
-$('.photos').css('display', 'none');
-});
-
-
- });
-
-  });
-
+   { photo: "pics/gf-3.jpg"} ]
+ var photos = albums.forEach(function(el) {
+   $('.photos').append("<img src='" + el.photo + "'>")
+    });
+    });
   ///// // /// ///// /// ///ALBUM5 // // // //// // /// // // // / /
-
-
-
   $('.km6').on('click', function (event) {
     event.preventDefault();
-
-  $('.km3').css('display', 'none');
-  $('.km5').css('display', 'none');
-  $('.km').css('display', 'none');
-  $('.km7').css('display', 'none');
-  $('.km4').css('display', 'none');
-  $('.km2').css('display', 'none');
-  $('.km6').css('display', 'none');
-    changeNavStyling();
-
-  var otherAlbums = [
+    kmhide();
+  var albums = [
    { photo: "pics/rndm-1.jpg"},{ photo: 'pics/rndm-2.jpg' },
-   { photo: "pics/rndm-3_003.jpg"}
- ]
-
- var photos = otherAlbums.forEach(function(el) {
-   $('.five').append("<img src='" + el.photo + "'>")
-
-   $('.butt1').on('click', function (event) {
-     event.preventDefault();
-     home();
-$('.photos').addClass("hidden");
-$('.photos').css('display', 'none');
-});
-
- });
-
+   { photo: "pics/rndm-3.jpg"} ]
+ var photos = albums.forEach(function(el) {
+   $('.photos').append("<img src='" + el.photo + "'>")
   });
-
+  });
       ///// // // // ////// / // / ////   ALBUM 6 // // ///// // //
-
-
-
       $('.km7').on('click', function (event) {
-        console.log("WHAT AM I", this);
         event.preventDefault();
-
-      $('.km3').css('display', 'none');
-      $('.km5').css('display', 'none');
-      $('.km6').css('display', 'none');
-      $('.km').css('display', 'none');
-      $('.km4').css('display', 'none');
-      $('.km2').css('display', 'none');
-      $('.km7').css('display', 'none');
-        changeNavStyling();
-
-
-      var otherAlbums = [
-       { photo: "pics/img_001.jpg"},{ photo: 'pics/img_002.jpg' },
-       { photo: "pics/img_003.jpg"},{ photo: 'pics/img_004.jpg',},
-       { photo: "pics/img_005.jpg"},{ photo: 'pics/img_006.jpg'}
-     ]
-
-     var photos = otherAlbums.forEach(function(el) {
-       $('.six').append("<img src='" + el.photo + "'>")
-
-       $('.butt1').on('click', function (event) {
-         event.preventDefault();
-         home();
-    $('.photos').addClass("hidden");
-    $('.photos').css('display', 'none');
-    });
-
-     });
+        kmhide();
+      var albums = [
+       { photo: "pics/baby-1.jpg"},{ photo: 'pics/baby-2.jpg' },
+       { photo: "pics/baby-3.jpg"}     ]
+     var photos = albums.forEach(function(el) {
+       $('.photos').append("<img src='" + el.photo + "'>")
   });
-
-
-
-
-
-
-
-//  $('div  a').on('click', function (event) {
-//    event.preventDefault();
-//
-//    var clickedSection = "." + $(this).attr('rel');
-//       console.log(clickedSection);
-//       $(clickedSection).addClass('active-section');
-//       $(clickedSection).siblings('section').removeClass('active-section');
-
-//     });
+  });

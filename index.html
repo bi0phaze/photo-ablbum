@@ -8,6 +8,13 @@
        <link rel="stylesheet" type="text/css" href= "style.css">
        <link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css">
        <!-- <link rel="stylesheet" href="bower_components/octicons/octicons/octicons.css"> -->
+       <script type="text/template" id="threePics">
+         <container>
+           <img src="<%= photo1 %>">
+           <img src="<%= photo2 %>">
+           <img src="<%= photo3 %>">
+         </container>
+       </script>
   </head>
 
 
@@ -18,12 +25,12 @@
                     <nav class = "navi">
                       <ul>
                       <button class="butt1"> <li><a href="#">  Home   </a></li></button>
-                      <button class="butt2"> <li><a href="#">  Album 1</a></li></button>
-                      <button class="butt3"> <li><a href="#">  Album 2</a></li></button>
-                      <button class="butt4"> <li><a href="#">  Album 3</a></li></button>
-                      <button class="butt5"> <li><a href="#">  Album 4</a></li></button>
-                      <button class="butt6"> <li><a href="#">  Album 5</a></li></button>
-                      <button class="butt7"> <li><a href="#">  Album 6</a></li></button>
+                      <button class="butt2" rel="frs"> <li><a href="#">  Album 1</a></li></button>
+                      <button class="butt3" rel="oorah"> <li><a href="#">  Album 2</a></li></button>
+                      <button class="butt4" rel="dogs"> <li><a href="#">  Album 3</a></li></button>
+                      <button class="butt5" rel="white"> <li><a href="#">  Album 4</a></li></button>
+                      <button class="butt6" rel="fridays"> <li><a href="#">  Album 5</a></li></button>
+                      <button class="butt7" rel="marvel"> <li><a href="#">  Album 6</a></li></button>
                       </ul>
                     </nav>
 
@@ -36,18 +43,25 @@
           </header>
 
           <section class="photos">
-            <container class="one">
+
+
+            <!-- <container class="one">
             <container>
+
               <container class="two">
               <container>
+
                 <container class="three">
                 <container>
+
                   <container class="four">
                   <container>
+
                     <container class="five">
                     <container>
+
                       <container class="six">
-                      <container>
+                      <container> -->
 
 
           </section>
@@ -56,9 +70,9 @@
 
           <section class="frs">
 
-            <a href="#"><div class="km active-section"></div></a>
-            <a href="#"><div class="km3"></div></a>
-            <a href="#"><div class="km4"></div></a>
+            <a href="#"><div class="km" rel="frs"></div></a>
+            <a href="#"><div class="km3" rel="oorah"></div></a>
+            <a href="#"><div class="km4" rel="dogs"></div></a>
 
           </section>
 
@@ -69,9 +83,9 @@
           </section>
 
           <section class="frs2">
-            <a href="#"><div class="km5"></div></a>
-            <a href="#"><div class="km6"></div></a>
-            <a href="#"><div class="km7"></div></a>
+            <a href="#"><div class="km5" rel="white"></div></a>
+            <a href="#"><div class="km6" rel="fridays"></div></a>
+            <a href="#"><div class="km7" rel="marvel"></div></a>
           </section>
 
           <section>
